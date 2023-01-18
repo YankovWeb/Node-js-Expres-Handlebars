@@ -5,6 +5,8 @@ const config = require("./config/config");
 
 require("./config/viewEngine")(app);
 
+app.use(express.static("src/public"));
+
 app.engine(
   "hbs",
   handlebars.engine({
@@ -14,7 +16,7 @@ app.engine(
 app.set("view engine", "hbs");
 app.set("views", "./src/views");
 app.get("/", (req, res) => {
-  res.render("home");
+  res.render("index");
 });
 
 app.listen(config.PORT, () =>
