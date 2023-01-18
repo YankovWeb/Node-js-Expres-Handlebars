@@ -5,6 +5,8 @@ const config = require("./config/config");
 
 require("./config/viewEngine")(app);
 
+app.use(express.static("src/public"));
+
 app.engine(
   "hbs",
   handlebars.engine({
