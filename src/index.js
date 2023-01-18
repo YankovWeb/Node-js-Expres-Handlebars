@@ -13,10 +13,19 @@ app.engine(
     extname: "hbs",
   })
 );
+
 app.set("view engine", "hbs");
 app.set("views", "./src/views");
 app.get("/", (req, res) => {
   res.render("index");
+});
+
+app.get("/about", (req, res) => {
+  res.render("about");
+});
+
+app.get("/create", (req, res) => {
+  res.render("create");
 });
 
 app.listen(config.PORT, () =>
